@@ -2,7 +2,7 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-bookname= 'Sherlock Holmes'
+bookname=str(input('Enter bookname:'))
 
 def bookinfo(bookname):
     url =f'https://www.googleapis.com/books/v1/volumes?q={bookname}+intitle:keyes&key=AIzaSyCE1fuJ62Yr3qi_6xKcNt7cmgUh_WxXHA8'
@@ -28,6 +28,6 @@ def bookinfo(bookname):
             try:print('InfoLink: ' + items['volumeInfo']['infoLink'])
             except:...
     else:
-        print('Помилка! Введіть назву праивльно!')
+        print('Enter the book title correctly')
 
 bookinfo(bookname)
