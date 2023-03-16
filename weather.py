@@ -10,7 +10,7 @@ def weather_check(city):
     url='http://api.openweathermap.org/data/2.5/find?q={city}&type=like&APPID={key}'
     res= requests.get(url)
     try:
-        data = {'Weather': res['weather'][0]['main'], 'Description': res['weather'][0]['description'], 'Curent temp': res['main']['temp'], 'Temp_min': res['main']['temp_min'], 'Temp_max': res['main']['temp_max']'}
+        data = {'Weather': res['weather'][0]['main'], 'Description': res['weather'][0]['description'], 'Curent temp': res['main']['temp'], 'Temp_min': res['main']['temp_min'], 'Temp_max': res['main']['temp_max']}
         print(pd.DataFrame([data]))
     except:print('Enter the city name correctly')
     
